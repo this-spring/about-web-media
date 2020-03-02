@@ -1,0 +1,29 @@
+.log-box {
+  overflow: auto;
+  border: 1px solid #cccccc;
+}
+
+.box {
+  width: 520px;
+  height: 200px;
+  font-size: 14px;
+  line-height: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.errormes {
+  width: 520;
+  height: 250px;
+  font-size: 14px;
+  line-height: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.log-title {
+  margin: 10px;
+  font-size: 14px
+}
