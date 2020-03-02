@@ -1,4 +1,4 @@
 {
-	"pluginDesc": {"message": "一个简单的Chrome插件demo"},
-	"helper": {"message": "helper"}
+	"pluginDesc": {"message": "关于网页video或者audio标签通过mse模式播放信息获取"},
+	"helper": {"message": "about web media"}
 }
