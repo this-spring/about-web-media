@@ -1,13 +1,21 @@
+/*
+ * @Author: xiuquanxu
+ * @Company: kaochong
+ * @Date: 2020-03-02 23:53:57
+ * @LastEditors: xiuquanxu
+ * @LastEditTime: 2020-03-04 01:15:50
+ */
 window.addEventListener("message", function (e) {
   try {
     const type = e.data.type;
-    if (type === 'xyinfo') {
-      chrome.tabs.query ({ }, function(tabs){
-        console.log(tabs);
-        chrome.tabs.sendMessage(tabs[0].id, { "type": "xyinfo", "data": e.data.info }, function(response) {
-        
-      })
-    });
+    console.log('--->' + JSON.stringify(e.data) + ' type:' + type);
+    if (type == 'videoinfo') {
+    //   chrome.tabs.query ({ }, function(tabs){
+    //     console.log(e.data.info);
+    //     chrome.tabs.sendMessage(tabs[0].id, { "type": "xyinfo", "data": e.data.info }, function(response) {
+    //   })
+    // });
+    // chrome.runtime.sendMessage({"type":"videoinfo", "data": e.data.info}, function (response) {return;})
       // chrome.runtime.sendMessage({ "type": "xyinfo", "data": e.data.info }, function (response) { return; })
     } else if (type === 'errorinfo') {
       chrome.runtime.sendMessage({ "type": "errorinfo", "data": e.data.info }, function (response) { return; });

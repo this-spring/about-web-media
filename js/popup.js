@@ -1,6 +1,13 @@
+/*
+ * @Author: xiuquanxu
+ * @Company: kaochong
+ * @Date: 2020-03-02 23:53:57
+ * @LastEditors: xiuquanxu
+ * @LastEditTime: 2020-03-04 01:14:59
+ */
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
-    console.log(request, sender);
+    console.error(request, sender);
     // if (request.type === 'xyinfo' && Object.keys(request.data).length > 0) {
     //   var content = '';
     //   for (key in request.data) {

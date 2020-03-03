@@ -1,11 +1,43 @@
+/*
+ * @Author: xiuquanxu
+ * @Company: kaochong
+ * @Date: 2020-03-02 23:53:57
+ * @LastEditors: xiuquanxu
+ * @LastEditTime: 2020-03-04 01:00:23
+ */
 'use strict';
 
-window.xyhelper = window.helper || {};
+/*
+ * @Author: xiuquanxu
+ * @Company: kaochong
+ * @Date: 2020-03-03 13:02:19
+ * @LastEditors: xiuquanxu
+ * @LastEditTime: 2020-03-03 13:24:25
+ */
+(function(root, factory) {
+  root['video'] = factory();
+})(this, function() {
+  var videoHelp = {
+    // [{id: ,currentTime: , buffered: }]
+    videosInfo: function() {
+      var videos = document.querySelectorAll('video');
+      var infos = [];
+      for (let i = 0; i < videos.length; i += 1) {
+        var item = videos[i];
+        infos.push({
+          id: item.id,
+          currentTime: item.currentTime,
+          buffered: item.buffered.end(0) - item.currentTime,
+        })
+      }
+      return infos;
+    },
+  }
+  return videoHelp;
+});
 
-window.xyhelper.onInfo = function(mes) {
-  window.postMessage(JSON.parse(JSON.stringify({type: 'xyinfo', info: mes})), '*');
-};
-
-window.xyhelper.onGlobaleError = function(mes) {
-  window.postMessage({type: 'errorinfo', info: mes}, '*');
-};
+var res = '';
+setInterval(() => {
+  res = video.videosInfo();
+  window.postMessage(JSON.parse(JSON.stringify({type: 'videoinfo', info: JSON.stringify(res)})));
+}, 2000);
