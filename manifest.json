@@ -1,9 +1,9 @@
 {
-	// 这里必须写上2
+	// 必须是2
 	"manifest_version": 2,
 	// 插件name
 	"name": "about-web-media",
-	// 版本号
+	// 插件版本号
 	"version": "1.0.0",
 	// 插件描述信息
 	"description": "video,audio,mse,plus",
