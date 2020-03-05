@@ -1,29 +1,31 @@
-.log-box {
-  overflow: auto;
-  border: 1px solid #cccccc;
+.main {
+  background-color: lightgray;
+  width: 300px;
+  min-height: 300px;
+  border-radius: 12px;
 }
 
-.box {
-  width: 520px;
-  height: 200px;
+.video-content {
+  width: 300px;
+  height: 120px;
+  border: 1px dashed lightgray;
+}
+
+.info-name {
+  margin: 15px 15px;
   font-size: 14px;
-  line-height: 30px;
-  margin-left: 20px;
-  margin-top: 20px;
+  font-style: inherit;
+  color: darkslategray;
 }
 
-.errormes {
-  width: 520;
-  height: 250px;
-  font-size: 14px;
-  line-height: 30px;
-  margin-left: 20px;
-  margin-top: 20px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+.info-key {
+  width: 90px;
+  display: inline-block;
 }
 
-.log-title {
-  margin: 10px;
-  font-size: 14px
+.info-src {
+  display: inline-block;
+  max-width: 170px;
+  overflow: scroll;
+  white-space: nowrap;
 }

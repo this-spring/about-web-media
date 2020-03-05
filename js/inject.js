@@ -26,8 +26,9 @@
         var item = videos[i];
         infos.push({
           id: item.id,
-          currentTime: item.currentTime,
-          buffered: item.buffered.end(0) - item.currentTime,
+          currentTime: parseInt(item.currentTime),
+          buffered: parseInt(item.buffered.end(0) - item.currentTime),
+          url: item.src,
         })
       }
       return infos;
