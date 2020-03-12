@@ -50,7 +50,7 @@ function makeTemplate(id) {
       <span class="info-key">播放时长:</span>
       <span class="${id}"></span>
     </div>
-    <div class="info-name">
+    <div class="info-name src-bottom">
       <span class="info-key">播放地址:</span>
       <span class="info-src ${id}"></span>
     </div>

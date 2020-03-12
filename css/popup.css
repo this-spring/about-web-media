@@ -7,7 +7,7 @@
 
 .video-content {
   width: 300px;
-  height: 120px;
+  height: 150px;
   border: 1px dashed lightgray;
 }
 
@@ -28,4 +28,8 @@
   max-width: 170px;
   overflow: scroll;
   white-space: nowrap;
+}
+
+.src-bottom {
+  margin-bottom: 15px;;
 }

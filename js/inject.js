@@ -3,7 +3,7 @@
  * @Company: kaochong
  * @Date: 2020-03-02 23:53:57
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-03-12 23:49:11
+ * @LastEditTime: 2020-03-13 00:45:48
  */
 'use strict';
 
@@ -18,6 +18,7 @@
   root['video'] = factory();
 })(this, function() {
   var count = 0;
+  var baseClassName = '';
   var videoHelp = {
     // [{id: ,currentTime: , buffered: }]
     videosInfo: function() {
@@ -29,13 +30,14 @@
         var bufferedLen = item.buffered.length;
         var buffered = '';
         if (!item.id) {
-          item.setAttribute('id', i);
-          item.id = i;
+          var id = `x${i}x`;
+          item.setAttribute('id', id);
+          item.id = id;
         }
         if (bufferedLen === 0) {
           buffered = 0;
         } else {
-          buffered = item.buffered.end(0) - item.currentTime;
+          buffered = parseInt(item.buffered.end(0) - item.currentTime, 10);
         }
         infos.push({
           id: item.id,
@@ -43,6 +45,7 @@
           buffered: buffered,
           url: item.src,
         });
+        baseClassName = item.classList;
         changeBorder(document.getElementById(item.id));
       }
       return infos;
@@ -52,9 +55,11 @@
   function changeBorder(ele) {
     if (!ele) return;
     if (count % 2 === 0) {
+      ele.classList.remove('remove-x');
       ele.classList.add('add-x');
     } else {
-        ele.classList.add('remove-x');
+      ele.classList.remove('add-x');
+      ele.classList.add('remove-x');
     }
   }
   return videoHelp;
