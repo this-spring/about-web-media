@@ -3,7 +3,7 @@
  * @Company: kaochong
  * @Date: 2020-03-02 23:53:57
  * @LastEditors: xiuquanxu
- * @LastEditTime: 2020-03-04 21:22:09
+ * @LastEditTime: 2020-03-12 23:18:35
  */
 window.addEventListener("message", function(e) {
   const type = e.data.type;
@@ -26,4 +26,11 @@ window.addEventListener("message", function(e) {
     this.parentNode.removeChild(this);
   };
   document.head.appendChild(temp);
+
+  var cssPath = 'css/common-x.css';
+  var cssTemp = document.createElement('link');
+  cssTemp.setAttribute('rel', 'stylesheet');
+  cssTemp.setAttribute('type', 'text/css');
+  cssTemp.href = chrome.extension.getURL(cssPath);
+  document.head.appendChild(cssTemp);
 }();

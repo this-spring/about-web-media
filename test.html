@@ -1,0 +1,70 @@
+<!--
+ * @Author: xiuquanxu
+ * @Company: kaochong
+ * @Date: 2020-03-12 22:11:38
+ * @LastEditors: xiuquanxu
+ * @LastEditTime: 2020-03-12 22:59:17
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add-x {
+            animation-duration: 1s;
+            border-style: solid;
+            border-width: 10px;
+            animation-name: videoBorder;
+        }
+
+        .remove-x {
+            animation-duration: 1s;
+            border-style: solid;
+            /* border-color: red; */
+            border-width: 10px;
+            animation-name: removeVideoBorder; 
+        }
+
+        @keyframes removeVideoBorder {
+            from {
+                border-color: white;
+            }
+            to {
+                border-color: black;
+            }
+        }  
+
+        @keyframes videoBorder {
+            from {
+                border-color: black;
+            }
+            to {
+                border-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg" id="bg">
+
+    </div>
+</body>
+</html>
+
+<script>
+    var count = 0;
+    setInterval(() => {
+        count += 1;
+        const e = document.getElementById('bg');
+        change(e);
+    }, 1000);
+    function change(e) {
+        if (count % 2 === 0) {
+            e.className = 'test';
+        } else {
+            e.className = 'remove';
+        }
+    }
+</script>

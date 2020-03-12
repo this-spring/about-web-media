@@ -1,0 +1,32 @@
+.add-x {
+    animation-duration: 1s;
+    border-style: solid;
+    border-width: 10px;
+    animation-name: videoBorder;
+}
+
+.remove-x {
+    animation-duration: 1s;
+    border-style: solid;
+    /* border-color: red; */
+    border-width: 10px;
+    animation-name: removeVideoBorder; 
+}
+
+@keyframes removeVideoBorder {
+    from {
+        border-color: white;
+    }
+    to {
+        border-color: black;
+    }
+}  
+
+@keyframes videoBorder {
+    from {
+        border-color: black;
+    }
+    to {
+        border-color: white;
+    }
+}
